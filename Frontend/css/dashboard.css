@@ -1,0 +1,324 @@
+/* ==========================================================================
+   E-Commerce Tech Layoffs Executive Dashboard - Warm Organic Palette
+   Colors: Broken White, Wood, Sage, Cloud Blue, Glasses, Warm Yellow, Terracotta
+   Theme: Dedicated Light Mode Only
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* Broken White Canvas & Surfaces */
+  --bg-canvas: #f9f7f2;
+  --bg-surface: #ffffff;
+  --bg-surface-hover: #f3eee7;
+  --bg-glass: rgba(255, 255, 255, 0.82);
+  --border-glass: rgba(255, 255, 255, 0.65);
+
+  /* Wood Palette (Primary Text & Structure) */
+  --wood-deep: #2c221e;
+  --wood-warm: #4a3b32;
+  --wood-soft: #7d6b5d;
+  --wood-border: #e6ded6;
+  --wood-border-subtle: #eee7df;
+  --wood-tint: #f5efe8;
+
+  /* Sage Palette (Stability, Growth, Low Layoff) */
+  --sage: #5b7057;
+  --sage-dark: #435440;
+  --sage-tint: #e9efe7;
+  --sage-border: #c9d8c5;
+
+  /* Cloud Blue Palette (AI, Analytics, Tech Shifts) */
+  --cloud-blue: #4b739b;
+  --cloud-blue-dark: #375778;
+  --cloud-blue-tint: #ebf2f7;
+  --cloud-blue-border: #c5d9e8;
+
+  /* Warm Yellow Palette (Alerts, Hypocrisy, Wall St. Greed) */
+  --yellow-warm: #d9822b;
+  --yellow-warm-dark: #b3661a;
+  --yellow-warm-tint: #fef7eb;
+  --yellow-warm-border: #fadbb3;
+
+  /* Terracotta Palette (Layoff Impact, Human Cost, Alarm) */
+  --terracotta: #c24e3f;
+  --terracotta-dark: #9e392c;
+  --terracotta-tint: #fdf1f0;
+  --terracotta-border: #f7d1cc;
+
+  /* Tactile Shadows */
+  --shadow-subtle: 0 1px 3px rgba(74, 59, 50, 0.04), 0 1px 2px rgba(74, 59, 50, 0.03);
+  --shadow-card: 0 4px 20px -2px rgba(74, 59, 50, 0.05), 0 2px 6px -1px rgba(74, 59, 50, 0.03);
+  --shadow-hover: 0 12px 28px -4px rgba(74, 59, 50, 0.09), 0 4px 10px -2px rgba(74, 59, 50, 0.04);
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-canvas);
+  color: var(--wood-warm);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-mono-numbers {
+  font-family: 'JetBrains Mono', 'SF Mono', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Minimal Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-canvas);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--wood-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--wood-soft);
+}
+
+/* Glassmorphism Containers */
+.glass-panel {
+  background: var(--bg-glass);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  border: 1px solid var(--wood-border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-card);
+}
+
+.glass-panel:hover {
+  border-color: #d8cdbf;
+}
+
+/* Scorecard Widgets */
+.kpi-scorecard {
+  padding: 1.25rem 1.5rem;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--wood-border);
+  border-radius: 14px;
+  box-shadow: var(--shadow-subtle);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.kpi-scorecard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+  border-color: #d1c5b6;
+}
+
+.kpi-pill {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Navigation Tabs */
+.nav-tab-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 10px;
+  color: var(--wood-soft);
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.nav-tab-pill:hover {
+  color: var(--wood-deep);
+  background-color: rgba(255, 255, 255, 0.7);
+  border-color: var(--wood-border-subtle);
+}
+
+.nav-tab-pill.active {
+  color: var(--cloud-blue-dark);
+  background-color: #ffffff;
+  border-color: var(--cloud-blue-border);
+  box-shadow: var(--shadow-subtle);
+  font-weight: 600;
+}
+
+/* Organic Semantic Badges */
+.badge-clean {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 6px;
+  letter-spacing: 0.02em;
+}
+
+.badge-terracotta {
+  color: var(--terracotta-dark);
+  background-color: var(--terracotta-tint);
+  border: 1px solid var(--terracotta-border);
+}
+
+.badge-sage {
+  color: var(--sage-dark);
+  background-color: var(--sage-tint);
+  border: 1px solid var(--sage-border);
+}
+
+.badge-yellow {
+  color: var(--yellow-warm-dark);
+  background-color: var(--yellow-warm-tint);
+  border: 1px solid var(--yellow-warm-border);
+}
+
+.badge-cloud {
+  color: var(--cloud-blue-dark);
+  background-color: var(--cloud-blue-tint);
+  border: 1px solid var(--cloud-blue-border);
+}
+
+.badge-wood {
+  color: var(--wood-warm);
+  background-color: var(--wood-tint);
+  border: 1px solid var(--wood-border);
+}
+
+/* Form Controls */
+.wood-select, .wood-input {
+  background-color: #ffffff;
+  border: 1px solid var(--wood-border);
+  color: var(--wood-deep);
+  border-radius: 8px;
+  padding: 0.5rem 0.875rem;
+  font-size: 0.875rem;
+  outline: none;
+  min-height: 42px;
+}
+
+.wood-select:focus, .wood-input:focus {
+  border-color: var(--cloud-blue);
+  box-shadow: 0 0 0 2px var(--cloud-blue-tint);
+}
+
+/* Interactive Heatmap Matrix Cell */
+.heatmap-cell {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 0.5rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: 'JetBrains Mono', monospace;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.heatmap-cell:hover {
+  transform: scale(1.06);
+  z-index: 10;
+  box-shadow: 0 6px 16px rgba(74, 59, 50, 0.15);
+}
+
+/* Custom Table */
+.wood-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.875rem;
+}
+
+.wood-table th {
+  background-color: var(--wood-tint);
+  color: var(--wood-soft);
+  font-weight: 600;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--wood-border);
+  user-select: none;
+}
+
+.wood-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--wood-border-subtle);
+  color: var(--wood-warm);
+}
+
+.wood-table tr:hover td {
+  background-color: rgba(243, 238, 231, 0.6);
+}
+
+/* Slide-out Glass Drawer */
+.glass-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(44, 34, 30, 0.45);
+  backdrop-filter: blur(6px);
+  z-index: 50;
+  display: flex;
+  justify-content: flex-end;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.glass-drawer-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.glass-drawer-content {
+  width: 100%;
+  max-width: 520px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  border-left: 1px solid var(--wood-border);
+  padding: 2rem;
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: -8px 0 32px rgba(74, 59, 50, 0.12);
+}
+
+.glass-drawer-backdrop.active .glass-drawer-content {
+  transform: translateX(0);
+}
+
+/* Layout Container Fixed Heights to Prevent CLS */
+.chart-box-fixed {
+  position: relative;
+  width: 100%;
+  min-height: 360px;
+  height: 360px;
+}
+
+.chart-box-large {
+  position: relative;
+  width: 100%;
+  min-height: 420px;
+  height: 420px;
+}

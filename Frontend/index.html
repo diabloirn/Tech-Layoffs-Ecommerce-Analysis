@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Commerce Tech Layoffs Executive Intelligence (2024–2026)</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            canvas: 'var(--bg-canvas)',
+            surface: 'var(--bg-surface)',
+            'wood-deep': 'var(--wood-deep)',
+            'wood-warm': 'var(--wood-warm)',
+            'wood-soft': 'var(--wood-soft)',
+            'wood-border': 'var(--wood-border)',
+            'wood-tint': 'var(--wood-tint)',
+            'sage': 'var(--sage)',
+            'sage-tint': 'var(--sage-tint)',
+            'cloud-blue': 'var(--cloud-blue)',
+            'cloud-blue-tint': 'var(--cloud-blue-tint)',
+            'yellow-warm': 'var(--yellow-warm)',
+            'yellow-warm-tint': 'var(--yellow-warm-tint)',
+            'terracotta': 'var(--terracotta)',
+            'terracotta-tint': 'var(--terracotta-tint)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Dashboard Styling (Warm Organic Palette & Glassmorphism) -->
+  <link rel="stylesheet" href="./css/dashboard.css">
+</head>
+<body class="min-h-screen bg-canvas text-wood-warm">
+
+  <!-- ======================================================================
+       Header & Global Navigation (Glassmorphic)
+       ====================================================================== -->
+  <header class="sticky top-0 z-40 bg-white/85 backdrop-blur-md border-b border-wood-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-center">
+      <h1 class="text-xl sm:text-2xl font-bold tracking-tight text-wood-deep text-center">Tech Layoffs & Hiring Trends</h1>
+    </div>
+
+    <!-- Navigation Tab Bar -->
+    <div class="border-t border-wood-border-subtle bg-white/60">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-1.5 overflow-x-auto py-2">
+        <button class="nav-tab-pill active" data-target="section-overview">
+          <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+          <span>Ringkasan Eksekutif</span>
+        </button>
+        <button class="nav-tab-pill" data-target="section-deepdives">
+          <i data-lucide="microscope" class="w-4 h-4"></i>
+          <span>4 Investigasi Kritis</span>
+        </button>
+        <button class="nav-tab-pill" data-target="section-stats">
+          <i data-lucide="binary" class="w-4 h-4"></i>
+          <span>Validasi Statistik Empiris</span>
+        </button>
+        <button class="nav-tab-pill" data-target="section-explorer">
+          <i data-lucide="database" class="w-4 h-4"></i>
+          <span>Eksplorasi Data (1,732)</span>
+        </button>
+        <button class="nav-tab-pill" data-target="section-recommendations">
+          <i data-lucide="shield-check" class="w-4 h-4"></i>
+          <span>Rekomendasi Bisnis & ESG</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Global Loader -->
+  <div id="globalLoader" class="max-w-7xl mx-auto px-4 py-16 text-center">
+    <div class="inline-block animate-spin rounded-full h-8 w-8 border-4 border-cloud-blue border-t-transparent mb-3"></div>
+    <p class="text-sm text-wood-soft">Memuat dataset analitik dan arsitektur modular...</p>
+  </div>
+
+  <!-- Main Dashboard Container -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+
+    <!-- ======================================================================
+         SECTION 1: OVERVIEW & KPIS
+         ====================================================================== -->
+    <section id="section-overview" class="dashboard-section space-y-8">
+      
+      <!-- Context Notification Card -->
+      <div class="glass-panel p-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div class="flex items-start gap-3.5">
+          <div class="w-10 h-10 rounded-xl bg-cloud-blue-tint text-cloud-blue flex items-center justify-center shrink-0 mt-0.5">
+            <i data-lucide="filter" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h2 class="text-sm font-bold text-wood-deep">Spesialisasi Sektor: Isolasi Ekosistem E-Commerce</h2>
+            <p class="text-xs text-wood-warm mt-1 max-w-3xl leading-relaxed">
+              Dari 12.000 entri teknologi global, data ini secara khusus mengisolasi <strong>1.732 sampel E-Commerce</strong>. 
+              Melalui validasi missing value otomatis, optimasi RAM (<code class="text-xs font-mono text-wood-deep bg-wood-tint px-1.5 py-0.5 rounded">category</code>), dan observasi outlier non-destruktif, data memaparkan fakta restrukturisasi tanpa distorsi sektor lain.
+            </p>
+          </div>
+        </div>
+        <div class="flex items-center gap-2 self-start md:self-center shrink-0">
+          <span class="badge-clean badge-sage">Data Bersih 100%</span>
+          <span class="badge-clean badge-wood">Deduplikasi Entitas</span>
+        </div>
+      </div>
+
+      <!-- KPI Scorecards Grid (Organic Warm Theme) -->
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <!-- Card 1: Total PHK -->
+        <div class="kpi-scorecard">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-semibold uppercase tracking-wider text-wood-soft">Total PHK</span>
+            <div class="kpi-pill bg-terracotta-tint text-terracotta">
+              <i data-lucide="users" class="w-4 h-4"></i>
+            </div>
+          </div>
+          <div>
+            <h3 id="kpiTotalLayoffs" class="text-xl sm:text-2xl font-bold font-mono-numbers text-terracotta">7.870.422</h3>
+            <span class="text-[11px] text-wood-soft block mt-1">Karyawan terdampak</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Rata-rata Layoff % -->
+        <div class="kpi-scorecard">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-semibold uppercase tracking-wider text-wood-soft">Rata-rata PHK</span>
+            <div class="kpi-pill bg-terracotta-tint text-terracotta">
+              <i data-lucide="percent" class="w-4 h-4"></i>
+            </div>
+          </div>
+          <div>
+            <h3 id="kpiAvgLayoffPct" class="text-xl sm:text-2xl font-bold font-mono-numbers text-wood-deep">8.96%</h3>
+            <span class="text-[11px] text-wood-soft block mt-1">Right-skewed tail</span>
+          </div>
+        </div>
+
+        <!-- Card 3: Adopsi AI -->
+        <div class="kpi-scorecard">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-semibold uppercase tracking-wider text-wood-soft">Penetrasi AI</span>
+            <div class="kpi-pill bg-cloud-blue-tint text-cloud-blue">
+              <i data-lucide="cpu" class="w-4 h-4"></i>
+            </div>
+          </div>
+          <div>
+            <h3 id="kpiAvgAIAdoption" class="text-xl sm:text-2xl font-bold font-mono-numbers text-cloud-blue">5.51 / 10</h3>
+            <span class="text-[11px] text-wood-soft block mt-1">Agresif di level 8–10</span>
+          </div>
+        </div>
+
+        <!-- Card 4: Keamanan Kerja -->
+        <div class="kpi-scorecard">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-semibold uppercase tracking-wider text-wood-soft">Keamanan Kerja</span>
+            <div class="kpi-pill bg-yellow-warm-tint text-yellow-warm">
+              <i data-lucide="shield-alert" class="w-4 h-4"></i>
+            </div>
+          </div>
+          <div>
+            <h3 id="kpiAvgJobSecurity" class="text-xl sm:text-2xl font-bold font-mono-numbers text-yellow-warm">5.89 / 10</h3>
+            <span class="text-[11px] text-terracotta font-medium block mt-1">Korelasi r = -0.758</span>
+          </div>
+        </div>
+
+        <!-- Card 5: Sentimen Karyawan -->
+        <div class="kpi-scorecard">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-semibold uppercase tracking-wider text-wood-soft">Sentimen Moral</span>
+            <div class="kpi-pill bg-sage-tint text-sage">
+              <i data-lucide="heart-pulse" class="w-4 h-4"></i>
+            </div>
+          </div>
+          <div>
+            <h3 id="kpiAvgSentiment" class="text-xl sm:text-2xl font-bold font-mono-numbers text-wood-deep">5.99 / 10</h3>
+            <span class="text-[11px] text-wood-soft block mt-1">Survivor syndrome</span>
+          </div>
+        </div>
+
+        <!-- Card 6: Reaksi Saham -->
+        <div class="kpi-scorecard">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-semibold uppercase tracking-wider text-wood-soft">Reaksi Saham</span>
+            <div class="kpi-pill bg-sage-tint text-sage">
+              <i data-lucide="trending-up" class="w-4 h-4"></i>
+            </div>
+          </div>
+          <div>
+            <h3 id="kpiAvgStockGrowth" class="text-xl sm:text-2xl font-bold font-mono-numbers text-sage">+24.4%</h3>
+            <span class="text-[11px] text-wood-soft block mt-1">Apresiasi Wall Street</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Overview Visualizations Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- Yearly Dynamics & Stock Reaction (8 Cols) -->
+        <div class="lg:col-span-8 glass-panel p-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
+            <div>
+              <h2 class="text-base font-bold text-wood-deep">Dinamika Tahunan: Total PHK vs Reaksi Saham (2024–2026)</h2>
+              <p class="text-xs text-wood-soft mt-0.5">Membandingkan volume PHK massal terhadap pertumbuhan harga saham e-commerce</p>
+            </div>
+            <span class="badge-clean badge-wood text-xs">Agregat Tahunan</span>
+          </div>
+          <div class="chart-box-fixed">
+            <canvas id="yearlyTrendChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Anomaly Interpretation Summary (4 Cols) -->
+        <div class="lg:col-span-4 glass-panel p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-2.5 h-2.5 rounded-full bg-yellow-warm animate-pulse"></div>
+              <h2 class="text-sm font-bold uppercase tracking-wider text-wood-deep">Temuan Kritis Anomali Data</h2>
+            </div>
+            <p class="text-xs text-wood-warm leading-relaxed mb-4">
+              Observasi outlier pada metrik kritis terhadap <code class="font-mono text-wood-deep bg-wood-tint px-1 py-0.5 rounded">Company Size</code> mengungkap bahwa label bawaan berdistribusi acak sintetik (misal startup tercatat mem-PHK 20.000 karyawan).
+            </p>
+            <div class="space-y-3">
+              <div class="p-3 rounded-xl bg-wood-tint border border-wood-border">
+                <span class="text-xs font-bold text-wood-deep block">Integritas Metodologi Riset</span>
+                <span class="text-xs text-wood-warm mt-0.5 block leading-normal">
+                  Riset tidak berpatokan pada label ukuran semu, melainkan fokus pada hubungan kausalitas empiris antar-variabel numerik yang terbukti solid.
+                </span>
+              </div>
+              <div class="p-3 rounded-xl bg-wood-tint border border-wood-border">
+                <span class="text-xs font-bold text-wood-deep block">3 Pilar Kausalitas Tervalidasi</span>
+                <span class="text-xs text-wood-warm mt-0.5 block leading-normal">
+                  Korelasi kuat pada <em>Automation Anxiety</em> (r = 0.636), <em>Human Cost</em> (r = -0.758), dan <em>Investment Impact</em> (r = 0.511).
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-wood-border mt-4 flex items-center justify-between text-xs text-wood-soft">
+            <span>Metode: Pearson Correlation</span>
+            <span class="text-sage font-semibold">Tervalidasi p &lt; 0.001</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Univariate Baseline Grid (Tahap 4.1) -->
+      <div class="glass-panel p-6">
+        <div class="mb-6">
+          <div class="flex items-center gap-2">
+            <span class="badge-clean badge-yellow">Tahap 4.1</span>
+            <h2 class="text-base font-bold text-wood-deep">Analisis Univariat: Baseline Dinamika PHK dan Penetrasi AI</h2>
+          </div>
+          <p class="text-xs text-wood-soft mt-1">Diagnostik distribusi baseline sebelum pengujian hubungan multivariat sebab-akibat</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Plot 1: Layoff % -->
+          <div class="p-4 rounded-xl border border-wood-border bg-white">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="text-sm font-bold text-wood-deep">1. Distribusi Persentase PHK (Layoff Percentage)</h3>
+              <span class="badge-clean badge-terracotta">Right-Skewed</span>
+            </div>
+            <div class="chart-box-fixed">
+              <canvas id="layoffDistChart"></canvas>
+            </div>
+            <p class="text-xs text-wood-warm mt-3 leading-relaxed">
+              <strong>Insight:</strong> Pola <em>right-skewed</em> dengan <em>long tail</em>. Mayoritas perusahaan membatasi PHK di kisaran &lt;10%, namun terdapat sekelompok korporasi anomali yang memangkas hingga 25%+.
+            </p>
+          </div>
+
+          <!-- Plot 2: AI Adoption -->
+          <div class="p-4 rounded-xl border border-wood-border bg-white">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="text-sm font-bold text-wood-deep">2. Distribusi Tingkat Adopsi AI (AI Adoption Level)</h3>
+              <span class="badge-clean badge-cloud">Penetrasi Agresif</span>
+            </div>
+            <div class="chart-box-fixed">
+              <canvas id="aiDistChart"></canvas>
+            </div>
+            <p class="text-xs text-wood-warm mt-3 leading-relaxed">
+              <strong>Insight:</strong> Penetrasi AI berada pada spektrum sangat agresif dan merata di seluruh industri hingga skor 8–10, membuktikan AI telah menjadi standar operasional retail digital.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ======================================================================
+         SECTION 2: THE 4 CRITICAL INVESTIGATIVE DEEP-DIVES
+         ====================================================================== -->
+    <section id="section-deepdives" class="dashboard-section hidden space-y-8">
+      
+      <div class="border-b border-wood-border pb-4">
+        <h2 class="text-2xl font-bold tracking-tight text-wood-deep">4 Investigasi Kritis: Membongkar Retorika vs Realitas</h2>
+        <p class="text-sm text-wood-soft mt-1 max-w-4xl">
+          Eksplorasi empiris terhadap paradoks otomatisasi AI, hipokrisi rekrutmen, manipulasi premi pasar modal, dan ilusi penghematan anggaran.
+        </p>
+      </div>
+
+      <!-- DEEP DIVE 1: The AI Paradox (Tahap 4.3.3) -->
+      <div class="glass-panel p-6">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 mb-6">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="badge-clean badge-cloud">Investigasi 1 • Tahap 4.3.3</span>
+              <h3 class="text-lg font-bold text-wood-deep">The AI Paradox: Membongkar Mitos Otomatisasi</h3>
+            </div>
+            <p class="text-xs text-wood-soft mt-1">4D Bubble Chart: Adopsi AI vs Persentase PHK vs Volume PHK vs Garis Regresi</p>
+          </div>
+          <span class="badge-clean badge-terracotta">Garis Tren Statis (Slope ≈ 0)</span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <div class="lg:col-span-8">
+            <div class="chart-box-large">
+              <canvas id="aiParadoxChart"></canvas>
+            </div>
+          </div>
+          <div class="lg:col-span-4 flex flex-col justify-between space-y-4">
+            <div class="p-4 rounded-xl bg-wood-tint border border-wood-border space-y-3">
+              <h4 class="text-sm font-bold text-wood-deep flex items-center gap-2">
+                <i data-lucide="alert-triangle" class="w-4 h-4 text-yellow-warm"></i>
+                Bukti Empiris: AI Sebagai PR Scapegoat
+              </h4>
+              <p class="text-xs text-wood-warm leading-relaxed">
+                Garis tren regresi <strong>sepenuhnya mendatar</strong> ($slope \approx 0$, $r = 0.0163$, $p = 0.498$).
+              </p>
+              <p class="text-xs text-wood-warm leading-relaxed">
+                Perusahaan dengan adopsi AI minim (skor 1–3) mem-PHK staf dengan persentase yang sama tingginya dengan korporasi berpengadopsi AI maksimal (skor 10).
+              </p>
+              <div class="p-3 rounded-lg bg-white border border-wood-border text-xs text-wood-deep font-medium">
+                <strong>Kesimpulan Investigasi:</strong> Narasi "AI menggantikan manusia" hanyalah kambing hitam PR untuk menutupi pemotongan biaya demi target marjin jangka pendek para investor.
+              </div>
+            </div>
+
+            <div class="text-[11px] text-wood-soft">
+              Ukuran bubble merepresentasikan volume staf terdampak. Garis merah putus-putus membuktikan tidak adanya korelasi kausal linear.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DEEP DIVE 2: The Hypocrisy Check (Tahap 4.2.1) -->
+      <div class="glass-panel p-6">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 mb-6">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="badge-clean badge-yellow">Investigasi 2 • Tahap 4.2.1</span>
+              <h3 class="text-lg font-bold text-wood-deep">The Hypocrisy Check: Kontradiksi Retorika vs Realitas Rekrutmen</h3>
+            </div>
+            <p class="text-xs text-wood-soft mt-1">Crosstab Heatmap: Alasan Resmi PHK Publik vs Posisi Spesialis yang Sebenarnya Direkrut Masif</p>
+          </div>
+          <span class="badge-clean badge-terracotta">Praktik Bait-and-Switch Terbukti</span>
+        </div>
+
+        <div id="hypocrisyHeatmapContainer" class="glass-panel p-4 bg-white mb-6">
+          <!-- Rendered via hypocrisyHeatmap.js -->
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="p-4 rounded-xl bg-wood-tint border border-wood-border">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-terracotta mb-1">1. Taktik Bait-and-Switch</h4>
+            <p class="text-xs text-wood-warm leading-relaxed">
+              Perusahaan berdalih <em>Overhiring</em> (54 entri) dan <em>Cost Cutting</em> (52 entri), namun secara masif merekrut <strong>ML Engineer</strong> dan <strong>Software Engineer</strong>. Anggaran dialihkan secara paksa ke talenta mahal.
+            </p>
+          </div>
+          <div class="p-4 rounded-xl bg-wood-tint border border-wood-border">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-yellow-warm mb-1">2. Kedok Restrukturisasi</h4>
+            <p class="text-xs text-wood-warm leading-relaxed">
+              Titik terpekat (<strong>57 perusahaan</strong>) terjadi pada persilangan <em>Restructuring</em> dan rekrutmen <strong>Frontend Developer</strong>. Restrukturisasi sebenarnya adalah perombakan UI/UX antarmuka AI.
+            </p>
+          </div>
+          <div class="p-4 rounded-xl bg-wood-tint border border-wood-border">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-cloud-blue mb-1">3. Risiko Sistem Kasta</h4>
+            <p class="text-xs text-wood-warm leading-relaxed">
+              Pemotongan staf operasional murah demi mendanai spesialis AI baru memicu kecemburuan internal, merusak loyalitas karyawan lama, dan melahirkan fenomena <em>quiet quitting</em>.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- DEEP DIVE 3: The Greed Premium vs The Panic Penalty (Tahap 4.3.1) -->
+      <div class="glass-panel p-6">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 mb-6">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="badge-clean badge-sage">Investigasi 3 • Tahap 4.3.1</span>
+              <h3 class="text-lg font-bold text-wood-deep">The Greed Premium & Wall Street Puppet</h3>
+            </div>
+            <p class="text-xs text-wood-soft mt-1">Bar Plot Alokasi: Respon Pertumbuhan Saham Berdasarkan Status Pendapatan dan Skala PHK</p>
+          </div>
+          <span class="badge-clean badge-wood">Dualisme Respon Pasar Modal</span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <div class="lg:col-span-7">
+            <div class="chart-box-large">
+              <canvas id="greedPremiumChart"></canvas>
+            </div>
+          </div>
+          <div class="lg:col-span-5 space-y-4">
+            <div class="p-4 rounded-xl bg-wood-tint border border-wood-border">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-bold uppercase tracking-wider text-terracotta">1. The Greed Premium (+25.1%)</span>
+                <span class="badge-clean badge-terracotta">Perusahaan Sehat</span>
+              </div>
+              <p class="text-xs text-wood-warm leading-relaxed">
+                Pada perusahaan dengan pendapatan positif (bertumbuh), eksekusi PHK ekstrem dihadiahi kenaikan harga saham tertinggi (<strong>+25.1%</strong>). Investor mengapresiasi perluasan marjin buatan dengan menumbalkan staf operasional.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-wood-tint border border-wood-border">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-bold uppercase tracking-wider text-yellow-warm">2. The Panic Penalty (+20.7%)</span>
+                <span class="badge-clean badge-yellow">Perusahaan Merugi</span>
+              </div>
+              <p class="text-xs text-wood-warm leading-relaxed">
+                Sebaliknya, pada perusahaan merugi (&lt;0%), PHK ekstrem justru membuahkan apresiasi terendah (<strong>+20.7%</strong>). Pasar membacanya sebagai <em>Sinyal Kepanikan (Death Spiral)</em>. Perusahaan yang menahan diri dihargai lebih tinggi (+24.7%).
+              </p>
+            </div>
+
+            <div class="p-3 rounded-lg bg-white border border-wood-border text-xs text-wood-soft">
+              <strong>The Bottom Line:</strong> Strategi PHK massal sebagai <em>cheat code</em> valuasi hanya berlaku saat perusahaan sedang untung. Pada kondisi rugi, taktik ini mempercepat erosi kepercayaan investor.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DEEP DIVE 4: The Budget Illusion & The Human Cost (Tahap 4.2.2 & 4.3.2) -->
+      <div class="glass-panel p-6">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 mb-6">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="badge-clean badge-terracotta">Investigasi 4 • Tahap 4.2.2 & 4.3.2</span>
+              <h3 class="text-lg font-bold text-wood-deep">The Budget Illusion & The Human Cost</h3>
+            </div>
+            <p class="text-xs text-wood-soft mt-1">Dampak Kausalitas Skala PHK terhadap Anggaran Gaji dan Runtuhnya Rasa Aman Karyawan</p>
+          </div>
+          <span class="badge-clean badge-terracotta">Korelasi Negatif Kuat r = -0.758</span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <!-- Chart 1: The Human Cost Regression -->
+          <div class="p-4 rounded-xl border border-wood-border bg-white">
+            <div class="flex items-center justify-between mb-3">
+              <h4 class="text-sm font-bold text-wood-deep">The Human Cost (Keamanan Kerja vs PHK %)</h4>
+              <span class="font-mono-numbers text-xs text-terracotta font-bold">r = -0.758</span>
+            </div>
+            <div class="chart-box-fixed">
+              <canvas id="humanCostChart"></canvas>
+            </div>
+            <div class="mt-3 text-xs text-wood-warm space-y-1">
+              <p>• <strong>Kemustahilan Sistemik:</strong> Kekosongan kuadran kanan atas membuktikan korporasi mustahil mem-PHK massal tanpa merusak psikologis organisasi.</p>
+              <p>• <strong>Survivor Syndrome & Brain Drain:</strong> Talenta terbaik mengundurkan diri sukarela mencari stabilitas di kompetitor.</p>
+            </div>
+          </div>
+
+          <!-- Chart 2: The Budget Illusion Clustering -->
+          <div class="p-4 rounded-xl border border-wood-border bg-white">
+            <div class="flex items-center justify-between mb-3">
+              <h4 class="text-sm font-bold text-wood-deep">The Budget Illusion (Anggaran Gaji vs Sentimen)</h4>
+              <span class="badge-clean badge-yellow">Gali Lubang Tutup Lubang</span>
+            </div>
+            <div class="chart-box-fixed">
+              <canvas id="budgetIllusionChart"></canvas>
+            </div>
+            <div class="mt-3 text-xs text-wood-warm space-y-1">
+              <p>• <strong>Ilusi Penghematan:</strong> Klaster PHK Ekstrem (Terracotta) berpusat di pertumbuhan anggaran positif akibat kompensasi dan gaji talenta baru.</p>
+              <p>• <strong>Sabotase Sentimen:</strong> Sentimen karyawan terpuruk di level bawah memicu fenomena <em>quiet quitting</em> masif.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ======================================================================
+         SECTION 3: STATISTICAL VALIDATION MATRIX (TAHAP 5)
+         ====================================================================== -->
+    <section id="section-stats" class="dashboard-section hidden space-y-8">
+      
+      <div class="border-b border-wood-border pb-4">
+        <div class="flex items-center gap-2">
+          <span class="badge-clean badge-sage">Tahap 5: Uji Signifikansi</span>
+          <h2 class="text-2xl font-bold tracking-tight text-wood-deep">Matriks Validasi Empiris (Hard Evidence)</h2>
+        </div>
+        <p class="text-sm text-wood-soft mt-1 max-w-4xl">
+          Pengujian Pearson Correlation Coefficient secara saintifik untuk memastikan seluruh pola riset adalah anomali sistemik yang valid secara statistik, bukan kebetulan (random chance).
+        </p>
+      </div>
+
+      <!-- Statistical Table Card -->
+      <div class="glass-panel overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="wood-table">
+            <thead>
+              <tr>
+                <th class="w-1/4">Hipotesis / Pasangan Variabel</th>
+                <th class="w-32">Koefisien Korelasi (r)</th>
+                <th class="w-32">P-Value</th>
+                <th class="w-36">Status Signifikansi</th>
+                <th>Interpretasi Strategis & Temuan Bisnis</th>
+              </tr>
+            </thead>
+            <tbody id="statsTableBody">
+              <!-- Rendered via statsTableComponent.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Deep Interpretation Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="glass-panel p-6">
+          <div class="flex items-center gap-2 text-sage mb-3">
+            <i data-lucide="check-circle" class="w-5 h-5"></i>
+            <h3 class="text-sm font-bold uppercase tracking-wider text-wood-deep">Signifikansi 3 Variabel Utama (p &lt; 0.05)</h3>
+          </div>
+          <p class="text-xs text-wood-warm leading-relaxed">
+            Hubungan antara <strong>Adopsi AI vs Risiko Disrupsi</strong> (r = 0.6360, p = 5.64e-197), <strong>PHK vs Keamanan Kerja</strong> (r = -0.7577, p = 4.94e-323), dan <strong>Anggaran Gaji vs Sentimen</strong> (r = 0.5109, p = 8.70e-116) terbukti signifikan mutlak. Fenomena <em>Human Cost</em> dan <em>Automation Anxiety</em> adalah bukti tak terbantahkan.
+          </p>
+        </div>
+
+        <div class="glass-panel p-6">
+          <div class="flex items-center gap-2 text-yellow-warm mb-3">
+            <i data-lucide="info" class="w-5 h-5"></i>
+            <h3 class="text-sm font-bold uppercase tracking-wider text-wood-deep">Nilai Emas dari Ketidaksignifikanan Saham</h3>
+          </div>
+          <p class="text-xs text-wood-warm leading-relaxed">
+            Hasil tidak signifikan pada <strong>Stock Growth vs Layoff Count</strong> (r = 0.0163, p = 0.498) adalah temuan penting. Ini membuktikan bahwa <strong>pasar saham tidak bereaksi secara buta</strong> terhadap jumlah orang yang dipecat. Investor bersikap selektif berdasarkan status pendapatan fundamental.
+          </p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ======================================================================
+         SECTION 4: INTERACTIVE DATA EXPLORER
+         ====================================================================== -->
+    <section id="section-explorer" class="dashboard-section hidden space-y-6">
+      
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-wood-border pb-4">
+        <div>
+          <h2 class="text-2xl font-bold tracking-tight text-wood-deep">Eksplorasi Data E-Commerce</h2>
+          <p class="text-sm text-wood-soft mt-1">Akses langsung ke 1.732 entri records terisolasi dengan filter real-time dan inspeksi profil</p>
+        </div>
+        <span id="tableTotalCount" class="badge-clean badge-wood text-xs self-start sm:self-center font-mono-numbers">1.732 Perusahaan</span>
+      </div>
+
+      <!-- Controls & Filter Bar -->
+      <div class="glass-panel p-4 space-y-3">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-3">
+          <!-- Search input -->
+          <div class="md:col-span-6 relative">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-wood-soft">
+              <i data-lucide="search" class="w-4 h-4"></i>
+            </div>
+            <input type="text" id="tableSearchInput" placeholder="Cari nama perusahaan, negara, posisi rekrutmen..." 
+                   class="wood-input w-full pl-9">
+          </div>
+
+          <!-- Reason select -->
+          <div class="md:col-span-3">
+            <select id="reasonFilterSelect" class="wood-select w-full">
+              <option value="All">Semua Alasan PHK</option>
+            </select>
+          </div>
+
+          <!-- Year filter buttons -->
+          <div class="md:col-span-3 flex items-center gap-1.5 justify-end">
+            <button class="year-filter-btn px-3 py-2 rounded-lg border border-wood-border text-xs font-semibold hover:bg-wood-tint active bg-cloud-blue text-white" data-year="All">Semua</button>
+            <button class="year-filter-btn px-3 py-2 rounded-lg border border-wood-border text-xs font-semibold hover:bg-wood-tint" data-year="2024">2024</button>
+            <button class="year-filter-btn px-3 py-2 rounded-lg border border-wood-border text-xs font-semibold hover:bg-wood-tint" data-year="2025">2025</button>
+            <button class="year-filter-btn px-3 py-2 rounded-lg border border-wood-border text-xs font-semibold hover:bg-wood-tint" data-year="2026">2026</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Table Container -->
+      <div class="glass-panel overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="wood-table">
+            <thead>
+              <tr>
+                <th class="cursor-pointer" data-sort="company">
+                  Perusahaan <span class="sort-indicator opacity-30">↕</span>
+                </th>
+                <th class="cursor-pointer" data-sort="layoffs">
+                  Total PHK <span class="sort-indicator opacity-100 text-cloud-blue">↓</span>
+                </th>
+                <th class="cursor-pointer" data-sort="layoff_pct">
+                  PHK % <span class="sort-indicator opacity-30">↕</span>
+                </th>
+                <th>Alasan Resmi</th>
+                <th class="cursor-pointer" data-sort="ai_adoption">
+                  Adopsi AI <span class="sort-indicator opacity-30">↕</span>
+                </th>
+                <th>Posisi Rekrutmen Utama</th>
+                <th class="cursor-pointer" data-sort="stock_growth">
+                  Saham % <span class="sort-indicator opacity-30">↕</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody id="tableBody">
+              <!-- Rendered via tableComponent.js -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Pagination Bar -->
+        <div class="p-4 border-t border-wood-border flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-wood-soft bg-white/70">
+          <span id="pageInfo">Menampilkan 1–20 dari 1.732</span>
+          <div class="flex items-center gap-2">
+            <button id="prevPageBtn" class="px-3.5 py-1.5 rounded-lg border border-wood-border hover:bg-wood-tint disabled:opacity-40 disabled:cursor-not-allowed">Sebelumnya</button>
+            <button id="nextPageBtn" class="px-3.5 py-1.5 rounded-lg border border-wood-border hover:bg-wood-tint disabled:opacity-40 disabled:cursor-not-allowed">Selanjutnya</button>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ======================================================================
+         SECTION 5: STRATEGIC RECOMMENDATIONS & ESG (TAHAP 6)
+         ====================================================================== -->
+    <section id="section-recommendations" class="dashboard-section hidden">
+      <!-- Container rendered dynamically via recommendationsComponent.js -->
+      <div id="recommendationsContainer"></div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================================
+       Slide-out Glass Drawer for Company Drilldown
+       ====================================================================== -->
+  <div id="drawerBackdrop" class="glass-drawer-backdrop">
+    <div class="glass-drawer-content">
+      <div class="flex items-center justify-between border-b border-wood-border pb-4 mb-6">
+        <span class="text-xs font-bold uppercase tracking-wider text-wood-soft">Profil Entri Detail</span>
+        <button id="closeDrawerBtn" aria-label="Tutup Panel" class="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-wood-tint text-wood-warm">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Detail Body rendered dynamically via drawerComponent.js -->
+      <div id="drawerDetailBody"></div>
+    </div>
+  </div>
+
+  <!-- Modular Application Entry Point -->
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
